@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #f8d7da; /* Light orange background */
+        }
+        .semester {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #fff; /* White background for the semester block */
+        }
+        .course {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CGPA Calculator</h1>
+    <form id="cgpa-form">
+        <div id="semesters">
+            <!-- Semester 1 initially -->
+            <div class="semester">
+                <h2>Semester 1</h2>
+                <div class="courses">
+                    <!-- Courses will be dynamically added here -->
+                </div>
+                <label for="course">Course:</label>
+                <input type="text" class="course" name="course">
+                <label for="credits">Credits:</label>
+                <input type="number" class="credits" name="credits" min="1" max="4">
+                <label for="grade">Grade:</label>
+                <select class="grade" name="grade">
+                    <option value="10">O - 10</option>
+                    <option value="9">A - 9</option>
+                    <option value="8">B - 8</option>
+                    <option value="7">C - 7</option>
+                    <option value="6">D - 6</option>
+                    <option value="5">P - 5</option>
+                    <option value="0">F - 0</option>
+                </select>
+                <button type="button" onclick="addCourse(this)">Add Course</button>
+                <button type="button" onclick="editCourse(this)">Edit Last Course</button>
+            </div>
+        </div>
+        <button type="button" onclick="addSemester()">Add Semester</button>
+        <button type="button" onclick="calculateCGPA()">Calculate CGPA</button>
+    </form>
+    <p id="result"></p>
+
+    <script src="app.js"></script>
+</body>
+</html>
